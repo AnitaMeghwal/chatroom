@@ -1,42 +1,63 @@
-<div class="container-fluid">
+<div style="margin: auto; background-color:#B0E0E6; padding:30px; width:550px;box-shadow:5px 5px 15px grey;" class="container">
     <div class="row">
         <div class="col-sm-5">
             <div class="form-group">
                 <label for="username">Username</label>
-                <input type="text" [(ngModel)]="user" class="form-control" id="username" placeholder="Enter username">
+                <input style="width: 200px; background-color: #E0FFFF; border: none; " type="text" [(ngModel)]="user" class="form-control" id="username" placeholder="Enter username">
             </div>
         </div>
         <div class="col-sm-5">
             <label for="roomInput">Choose room</label>
-            <select name="roomInput" id="roomInput" class="form-control" [(ngModel)]="room">
-                <option value="Room1">Room1</option>
-                <option value="Room2">Room2</option>
-                <option value="Room3">Room3</option>
+            <select style="width: 200px;background-color: #E0FFFF; border: none;" name="roomInput" id="roomInput" class="form-control" [(ngModel)]="room">
+                <option value="Room1">Room 1</option>
+                <option value="Room2">Room 2</option>
+                <option value="Room3">Room 3</option>
+                <option value="Room4">Room 4</option>
+                <option value="Room5">Room 5</option>
             </select>
         </div>
         <div class="col sm-2">
             <div style="margin-top:19px;" class="pull-right"> 
-                <button type="button" class="btn btn-primary" (click)="join()">Join</button>
-                <button type="button" class="btn btn-default" (click)="leave()">Leave</button>
+                <button style="background-color: #20B2AA; border: none; box-shadow:2px 2px 5px grey;" #4682B4 type="button" class="btn btn-primary" (click)="join()">Join</button>
+                <button style="background-color: #5F9EA0; border: none;box-shadow:2px 2px 5px grey;" type="button" class="btn btn-primary" (click)="leave()">Leave</button>
+                <br />
             </div>
         </div>
     </div>
+    <br>
 
-    <div id="chatarea" class="form-control" style="height: 200px;width: 700px;">
-        <div class="col-sm-10" style="height:200px; padding:15px;">
+    <div id="chatarea" class="form-control" style="height: 200px;width: 480px; background-color: #E0FFFF;border: none; overflow: auto;">
+        <div class="col-sm-10" style="height:200px; padding:5px;">
             <div *ngFor="let item of messageArray">
             <span><strong>{{item.user}} : </strong> {{item.message}}</span>
             </div>
         </div>
     </div>
+    <br>
     <div class="row">
         <div class="col-sm-10">
-            <input type="text" class="form-control" [(ngModel)]="messageText">            
+            <input placeholder="Enter message..." style="width: 480px;background-color: #E0FFFF; border: none;" type="text" class="form-control" [(ngModel)]="messageText">            
         </div>
-        <div class="col-sm-2" class="pull-right">
-                <button type="button" class="btn btn-primary" (click)="sendMessage()">Send</button>
-        </div>
-      
     </div>
+    <br>
+    <div class="row">
+        <div class="col-sm-2" class="pull-right">
+                <button style="background-color: #20B2AA; border: none; box-shadow:2px 2px 5px grey;" type="button" class="btn btn-primary" (click)="sendMessage()">Send</button>
+                <button style="background-color: grey; border: none; box-shadow:2px 2px 5px grey;" type="button" class="btn btn-danger" (click)="delete()">Delete</button>
+        </div>
+    </div>
+     <label>🙂</label>
+         <select placeholder="🙂" style="width: 40px;background-color: #E0FFFF; border: none;" name="roomInput" id="roomInput" class="form-control" [(ngModel)]="messageText">
+                <option value="😀">😀</option>
+                <option value="😊">😊</option>
+                <option value="🙁">🙁</option>
+                <option value="😁">😁</option>
+                <option value="😂">😂</option>
+                <option value="😉">😉</option>
+                <option value="😍">😍</option>
+                <option value="😎">😎</option>
+                <option value="😅">😅</option>
+                <option value="😡">😡</option>
+            </select>      
 
 </div>

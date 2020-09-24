@@ -12,6 +12,7 @@ export class AppComponent {
     user:String;
     room:String;
     messageText:String;
+    emoji:String;
     messageArray:Array<{user:String,message:String}> = [];
     userArray: Array<{user:String}> = [];
     constructor(private _chatService:ChatService){
@@ -39,5 +40,9 @@ export class AppComponent {
         this._chatService.sendMessage({user:this.user, room:this.room, message:this.messageText});
     }
 
+    delete()
+    {
+       this.messageArray.pop();
+    }
 
 }
